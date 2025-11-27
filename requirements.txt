@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+Scrapy
+spacy
+en-core-web-sm
+pydantic
+python-multipart
+
+
