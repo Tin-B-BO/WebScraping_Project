@@ -5,7 +5,6 @@
 
 import scrapy
 
-
 class RecipeItem(scrapy.Item):
     url = scrapy.Field()
     source = scrapy.Field()
@@ -20,5 +19,6 @@ class RecipeItem(scrapy.Item):
     cook_time = scrapy.Field()
     total_time = scrapy.Field()
     servings = scrapy.Field()
+
 
 

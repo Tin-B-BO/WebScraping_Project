@@ -35,7 +35,6 @@ def preprocess_dataset(input_path: str, output_path: str):
     processed = []
     for recipe in data:
         title = clean_text(recipe.get("title", ""))
-
         ingredients = preprocess_list(recipe.get("ingredients_raw", []))
         instructions = preprocess_list(recipe.get("instructions_raw", []))
         # Join ingredients into single string for NLP
