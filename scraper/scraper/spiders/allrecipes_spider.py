@@ -73,3 +73,4 @@ class AllRecipesSpider(scrapy.Spider):
 
         yield item
 
+
