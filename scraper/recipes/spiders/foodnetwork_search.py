@@ -261,12 +261,6 @@ class FoodNetworkSpider(scrapy.Spider):
 
         # apply query-title match gate
         if not matches_query_rules(item["title"], self.query_raw):
-            self.logger.error(
-                "[CN][foodnetwork][strict_mismatch] url=%s title=%r query=%r",
-                response.url,
-                item["title"],
-                self.query_raw,
-            )
             return
 
         # extract image url from srcset or src
