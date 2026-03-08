@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+Scrapy
+spacy
+pydantic
+email-validator==2.3.0
+python-multipart
+sqlalchemy
+psycopg2-binary
+bcrypt
+python-jose[cryptography]

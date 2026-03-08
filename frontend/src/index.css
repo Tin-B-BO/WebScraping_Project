@@ -1,0 +1,58 @@
+/* global page reset */
+html,
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* base body styles */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #ffffff;
+}
+
+#root {
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* app header wrapper layout */
+.app-header-shell {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  background-color: #fcfcfc;
+  height: 60px;
+}
+
+/* app main area between header and footer */
+.app-main {
+  flex: 1;
+  min-height: 0;
+  padding-top: 0;
+}
+
+/* app footer wrapper layout */
+.app-footer-shell {
+  position: relative;
+  width: 100%;
+  background-color: #ededed;
+  z-index: 1000;
+}

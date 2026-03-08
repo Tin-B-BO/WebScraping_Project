@@ -1,0 +1,194 @@
+/* Popular section layout */
+.popular-session {
+  width: 100%;
+  background-color: #fff;
+  padding: 18px 0 20px;
+}
+
+.popular-session__inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.popular-session__header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.popular-session__title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.popular-session__subtitle {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Carousel and cards */
+.popular-session__carousel {
+  position: relative;
+  margin-top: 10px;
+  overflow: visible;
+}
+
+.popular-session__viewport {
+  padding: 14px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.popular-session__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.popular-session__viewport--dragging {
+  cursor: grabbing;
+}
+
+.popular-session__track {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.popular-session__card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 180px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.1s ease;
+}
+
+.popular-session__card:hover {
+  transform: translateY(-6px);
+}
+
+.popular-session__card-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #f1f1f1;
+}
+
+.popular-session__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.popular-session__card-title {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 16px 15px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #fff;
+  background: rgba(54, 30, 3, 0.349);
+  backdrop-filter: blur(6px);
+}
+
+.popular-session__arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #c7c7c78c;
+  border-radius: 0;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.185);
+  transform: translateY(-50%);
+  transition: all 0.2s ease;
+}
+
+.popular-session__arrow--prev {
+  left: -80px;
+}
+
+.popular-session__arrow--next {
+  right: -80px;
+}
+
+.popular-session__arrow:hover {
+  background: #fcfcfc;
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Pagination controls */
+.popular-session__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.popular-session__dot {
+  width: 8px;
+  height: 8px;
+  border: none;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  cursor: pointer;
+}
+
+.popular-session__dot--active {
+  width: 24px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #df8600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1300px) {
+  .popular-session__inner {
+    padding: 0 45px;
+  }
+
+  .popular-session__arrow--prev {
+    left: -38px;
+  }
+
+  .popular-session__arrow--next {
+    right: -38px;
+  }
+}
+
+@media (max-width: 768px) {
+  .popular-session__inner {
+    padding: 0 20px;
+  }
+
+  .popular-session__arrow {
+    display: none;
+  }
+}
