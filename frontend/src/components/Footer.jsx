@@ -31,12 +31,6 @@ function Footer() {
         <div className="app-footer__column app-footer__column--no-title">
           <ul>
             <li><Link to="/info/cookie-policy">Cookie Policy</Link></li>
-            <li><Link to="/info/cookie-settings">Cookie settings</Link></li>
-          </ul>
-        </div>
-
-        <div className="app-footer__column app-footer__column--no-title">
-          <ul>
             <li><Link to="/info/terms-of-service">Terms of Service</Link></li>
           </ul>
         </div>
