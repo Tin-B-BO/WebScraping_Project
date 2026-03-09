@@ -191,7 +191,7 @@ class FoodNetworkSpider(scrapy.Spider):
 
     custom_settings = {
         "USER_AGENT": "universityproject (recipe.project.uni@gmail.com)",
-        "DOWNLOAD_DELAY": 0.1,
+        "DOWNLOAD_DELAY": 0.3,
         "CONCURRENT_REQUESTS": 16,
         "DEPTH_LIMIT": 1,
         "DOWNLOAD_TIMEOUT": 12,
