@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../styles/PasswordGate.css";
 
+const RESEARCH_ACCESS_KEY = import.meta.env.VITE_RESEARCH_ACCESS_KEY;
+
 const PasswordGate = ({ children }) => {
   const [password, setPassword] = useState("");
   const [authorized, setAuthorized] = useState(false);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     if (sessionStorage.getItem("research_auth") === "true") {
@@ -13,11 +16,24 @@ const PasswordGate = ({ children }) => {
 
   const handleVerify = (e) => {
     e.preventDefault();
-    if (password === "dissertation2026") {
+    const trimmedPassword = password.trim();
+
+    if (!RESEARCH_ACCESS_KEY) {
+      setMessage("Access key is not configured. Please set VITE_RESEARCH_ACCESS_KEY.");
+      return;
+    }
+
+    if (!trimmedPassword) {
+      setMessage("Please enter the access key.");
+      return;
+    }
+
+    if (trimmedPassword === RESEARCH_ACCESS_KEY) {
       setAuthorized(true);
       sessionStorage.setItem("research_auth", "true");
+      setMessage("");
     } else {
-      alert("Incorrect password. Please check Dissertation Report Appendix N.2");
+      setMessage("Incorrect password. Please check Dissertation Report Appendix N.2.");
     }
   };
 
@@ -32,9 +48,19 @@ const PasswordGate = ({ children }) => {
               className="password-gate__input"
               type="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                if (message) {
+                  setMessage("");
+                }
+              }}
               placeholder="Enter Access Key"
             />
+            {message && (
+              <p className="password-gate__message" role="alert" aria-live="polite">
+                {message}
+              </p>
+            )}
             <button type="submit" className="password-gate__submit">
               Enter Prototype
             </button>
